@@ -47,6 +47,7 @@ Full API documentation [aqui](https://github.com/open-wa/wa-automate-nodejs)
 |       ✅        |   Welcome to new members         |
 |       ✅        |   welcome kick                   |
 |       ✅        |   Send flood                     |
+|       ✅        |   Owner bot                      |
 |       ❌        |   Kick Member Group	            |
 |       ❌        |   Add Member Group	              |
 
