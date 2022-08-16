@@ -6,6 +6,7 @@ const wa = require('@open-wa/wa-automate')
 fulltime = new Date()
 hora = fulltime.getHours()
 minutos = fulltime.getMinutes()
+number = 'YOUR_NUMBER'
 
 wa.create().then(bot => start(bot))
 
@@ -20,7 +21,7 @@ function start(bot) {
                 else {
                     await bot.reply(message.chat.id, `\`\`\`[404] - Proibido ❌ \`\`\``, message.id)
                     await setTimeout(() => {
-                        bot.sendText('557488562578@c.us', `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou usar o _debuger_ sem permissão 🤖`)
+                        bot.sendText(`${number}@c.us`, `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou usar o _debuger_ sem permissão 🤖`)
                     
                     }, 1000);
                 }
@@ -28,12 +29,12 @@ function start(bot) {
 
             //criador
             if (message.body === '!criador') {
-                await bot.sendContact(message.chat.id, '557488562578@c.us')
+                await bot.sendContact(message.chat.id, `${number}@c.us`)
                 await setTimeout(() => {
                     bot.sendText(message.chat.id, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - Aqui está o contato do meu criador`)
                 }, 500);
                 //debug
-                await bot.sendText('557488562578', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - Seu contato foi solicitado`)
+                await bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - Seu contato foi solicitado`)
             }
 
             // send sticker
@@ -45,7 +46,7 @@ function start(bot) {
                     await bot.sendImageAsSticker(message.chat.id, sticker)
 
                     await setTimeout(() => {
-                        bot.sendText('557488562578@c.us', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Gerou uma figurinha 🤖`)
+                        bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Gerou uma figurinha 🤖`)
                     }, 1000);
                 }
             }
@@ -55,7 +56,7 @@ function start(bot) {
                     await bot.sendReplyWithMentions(message.chat.id, `\`\`\`[400] - Indisponível ❌\`\`\``)
 
                     await setTimeout(() => {
-                        bot.sendText('557488562578@c.us', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou gerar uma figurinha com vídeo 🤖`)
+                        bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou gerar uma figurinha com vídeo 🤖`)
                     }, 1000);
                 }
             }
@@ -69,7 +70,7 @@ function start(bot) {
                         await bot.sendImageAsSticker(message.from, sticker1)
 
                         await setTimeout(() => {
-                            bot.sendText('557488562578@c.us', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou gerar uma figurinha com vídeo 🤖`)
+                            bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou gerar uma figurinha com vídeo 🤖`)
 
                         }, 1000);
                     }
@@ -83,7 +84,7 @@ function start(bot) {
             if (message.body == '_!help'){
                 await bot.reply(message.chat.id, banner.banner(), message.id)
                 await setTimeout(() => {
-                    bot.sendText('557488562578@c.us', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Commands: _!help_ 🤖`)
+                    bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Commands: _!help_ 🤖`)
                 })
             }
 
@@ -91,7 +92,7 @@ function start(bot) {
             if (message.body == '_!flood'){
                 await bot.sendText(message.chat.id, flood.flood(), message.id)
                 await setTimeout(() => {
-                    bot.sendText('557488562578@c.us', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ > Flood ativo`)
+                    bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ > Flood ativo`)
                 }, 1000);
             }
 
@@ -110,7 +111,7 @@ function start(bot) {
   ██ ██`, message.id
                     )
                     await setTimeout(() => {
-                        bot.sendText('557488562578@c.us', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ > Xingamento no grupo!`)
+                        bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ > Xingamento no grupo!`)
 
                     }, 1000);
                 }
@@ -138,7 +139,7 @@ function start(bot) {
                                 
                                 await setTimeout(() => {
                                     //debug
-                                    bot.sendText('557488562578@c.us', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Todos mencionados no grupo 🤖`)
+                                    bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Todos mencionados no grupo 🤖`)
     
                                 }, 10000);
                             }  
@@ -150,7 +151,7 @@ function start(bot) {
             else {   
                 //debug 
                 await setTimeout(() => {
-                    bot.sendText('557488562578@c.us', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - $ Interação no pv: 🤖\n\n\n _Mensagem:_ \`\`\`${message.body}\`\`\``)
+                    bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - $ Interação no pv: 🤖\n\n\n _Mensagem:_ \`\`\`${message.body}\`\`\``)
                 
                 }, 1000);
             }
@@ -159,13 +160,13 @@ function start(bot) {
         catch{
             //debug
             await setTimeout(() => {
-                bot.sendText('557488562578@c.us', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - O meu código teve algum erro 🤖`)
+                bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - O meu código teve algum erro 🤖`)
             }, 1000);
         }
     })
 
     // Boas vindas
-    const groupChatId = "120363040678895413@g.us";
+    const groupChatId = "GROUP_CHAT_ID";
     bot.onParticipantsChanged(
         groupChatId,
         async (changeEvent) => {
@@ -173,21 +174,21 @@ function start(bot) {
                 if (changeEvent.action == "add") {
                     await bot.sendTextWithMentions(groupChatId, `Bem vindo, *@${changeEvent.who.replace('@c.us', '')}*`)
                     await setTimeout(() => {
-                        bot.sendText('557488562578@c.us', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - Alguem entrou no grupo 🤖`)
+                        bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - Alguem entrou no grupo 🤖`)
                         
                     }, 1000);
                 }
                 if (changeEvent.action == "remove") {
                     await bot.sendText(groupChatId, '👋 Menos um')
                     await setTimeout(() => {
-                        bot.sendText('557488562578@c.us', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - Alguem saiu do grupo 🤖`)
+                        bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - Alguem saiu do grupo 🤖`)
                         
                     }, 10000);
                 }
             }
             catch{
                 await setTimeout(() => {
-                    bot.sendText('557488562578@c.us', `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - O meu código teve algum erro 🤖`)
+                    bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - O meu código teve algum erro 🤖`)
                 }, 1000);
             }
         }
