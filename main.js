@@ -3,6 +3,8 @@ const  flood  = require('./src/flood')
 const  banner  = require('./src/banner')
 const wa = require('@open-wa/wa-automate')
 
+var number = 'YOUR NUMBER'
+
 wa.create().then(bot => start(bot))
 
 function start(bot) {
@@ -10,13 +12,13 @@ function start(bot) {
         console.log(message)
         try{
             if (message.body === '$debug') {
-                if (message.sender.id == '557488562578@c.us') {
+                if (message.sender.id == `${number}@c.us`) {
                     await bot.reply(message.chat.id, `\`\`\`[200] - OK 🤖 ✔️ \`\`\``, message.id)
                 }
                 else {
                     await bot.reply(message.chat.id, `\`\`\`[404] - ❌ \`\`\``, message.id)
                     setTimeout(() => {
-                        await bot.sendText('557488562578@c.us', `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou usar o _debuger_ sem permissão 🤖`)
+                        await bot.sendText(`${number}@c.us`, `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou usar o _debuger_ sem permissão 🤖`)
                     
                     }, 1000);
                 }
@@ -24,7 +26,7 @@ function start(bot) {
 
             //criador
             if (message.body === '!criado') {
-                await bot.sendContact(message.chat.id, '557488562578@c.us')
+                await bot.sendContact(message.chat.id, `${number}@c.us`)
                 setTimeout(() => {
                     await bot.sendText(message.chat.id, 'Aqui está o contato do meu criador')
                 }, 500);
@@ -41,7 +43,7 @@ function start(bot) {
                     await bot.sendImageAsSticker(message.chat.id, sticker)
 
                     setTimeout(() => {
-                        await bot.sendText('557488562578@c.us', `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Gerou uma figurinha 🤖`)
+                        await bot.sendText(`${number}@c.us`, `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Gerou uma figurinha 🤖`)
                     }, 1000);
                 }
             }
@@ -50,7 +52,7 @@ function start(bot) {
                     await bot.sendReplyWithMentions(message.chat.id, 'Impossível gerar stickers com vídeos, amigo!')
 
                     setTimeout(() => {
-                        await bot.sendText('557488562578@c.us', `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou gerar uma figurinha com vídeo 🤖`)
+                        await bot.sendText(`${number}@c.us`, `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou gerar uma figurinha com vídeo 🤖`)
                     }, 1000);
                 }
             }
@@ -63,7 +65,7 @@ function start(bot) {
                         await bot.sendImageAsSticker(message.from, sticker1)
 
                         setTimeout(() => {
-                            await bot.sendText('557488562578@c.us', `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou gerar uma figurinha com vídeo 🤖`)
+                            await bot.sendText(`${number}@c.us`, `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou gerar uma figurinha com vídeo 🤖`)
 
                         }, 1000);
                     }
@@ -77,7 +79,7 @@ function start(bot) {
             if (message.body == '_!help'){
                 await bot.reply(message.chat.id, banner.banner(), message.id)
                 setTimeout(() => {
-                    await bot.sendText('557488562578@c.us', `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Commands: _!help_ 🤖`)
+                    await bot.sendText(`${number}@c.us`, `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Commands: _!help_ 🤖`)
                 })
             }
 
@@ -85,7 +87,7 @@ function start(bot) {
             if (message.body == '_!flood'){
                 await bot.sendText(message.chat.id, flood.flood(), message.id)
                 setTimeout(() => {
-                    await bot.sendText('557488562578@c.us', `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ > Flood ativo`)
+                    await bot.sendText(`${number}@c.us`, `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ > Flood ativo`)
                 }, 1000);
             }
 
@@ -111,7 +113,7 @@ function start(bot) {
                                 
                                 setTimeout(() => {
                                     //debug
-                                    await bot.sendText('557488562578@c.us', `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Todos mencionados no grupo 🤖`)
+                                    await bot.sendText(`${number}@c.us`, `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Todos mencionados no grupo 🤖`)
     
                                 }, 10000);
                             }  
@@ -123,7 +125,7 @@ function start(bot) {
             else {   
                 //debug 
                 setTimeout(() => {
-                    await bot.sendText('557488562578@c.us', `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - $ Interação no pv: 🤖\n\n\n _Mensagem:_ \`\`\`${message.body}\`\`\``)
+                    await bot.sendText(`${number}@c.us`, `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - $ Interação no pv: 🤖\n\n\n _Mensagem:_ \`\`\`${message.body}\`\`\``)
                 
                 }, 1000);
             }
@@ -132,13 +134,13 @@ function start(bot) {
         catch{
             //debug
             setTimeout(() => {
-                await bot.sendText('557488562578@c.us', 'O meu código teve algum erro 🤖')
+                await bot.sendText(`${number}@c.us`, 'O meu código teve algum erro 🤖')
             }, 1000);
         }
     })
 
     // Boas vindas
-    const groupChatId = "120363040678895413@g.us";
+    const groupChatId = "GROUP_CHAT_ID";
     bot.onParticipantsChanged(
         groupChatId,
         async (changeEvent) => {
@@ -146,21 +148,21 @@ function start(bot) {
                 if (changeEvent.action == "add") {
                     await bot.sendTextWithMentions(groupChatId, `Bem vindo, *@${changeEvent.who.replace('@c.us', '')}*`)
                     setTimeout(() => {
-                        await bot.sendText('557488562578@c.us', 'Alguem entrou no grupo 🤖')
+                        await bot.sendText(`${number}@c.us`, 'Alguem entrou no grupo 🤖')
                         
                     }, 1000);
                 }
                 if (changeEvent.action == "remove") {
                     await bot.sendText(groupChatId, '👋 Menos um')
                     setTimeout(() => {
-                        await bot.sendText('557488562578@c.us', 'Alguem saiu do grupo 🤖')
+                        await bot.sendText(`${number}@c.us`, 'Alguem saiu do grupo 🤖')
                         
                     }, 10000);
                 }
             }
             catch{
                 setTimeout(() => {
-                    await bot.sendText('557488562578@c.us', 'O meu código teve algum erro 🤖')
+                    await bot.sendText(`${number}@c.us`, 'O meu código teve algum erro 🤖')
                 }, 1000);
             }
         }
