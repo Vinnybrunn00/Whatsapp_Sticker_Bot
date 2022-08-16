@@ -31,7 +31,7 @@ function start(bot) {
                     await bot.sendText(message.chat.id, 'Aqui está o contato do meu criador')
                 }, 500);
                 //debug
-                await bot.sendText('557488562578', 'Seu contato foi solicitado')
+                await bot.sendText(`${number}`, 'Seu contato foi solicitado')
             }
 
             // send sticker
