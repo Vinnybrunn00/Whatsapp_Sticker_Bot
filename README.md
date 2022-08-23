@@ -30,7 +30,7 @@ If there is an error in the installation, delete the file. ```package.json``` an
 $ npm i --save @open-wa/wa-automate@latest
 ```
 
-Full API documentation [aqui](https://github.com/open-wa/wa-automate-nodejs)
+Full API documentation [here](https://github.com/open-wa/wa-automate-nodejs)
 
 
 ## Functionality
