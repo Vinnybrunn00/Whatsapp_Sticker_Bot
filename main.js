@@ -15,7 +15,7 @@ function start(bot) {
         console.log(message)
         try{
             if (message.body === '$debug') {
-                if (message.sender.id == '557488562578@c.us') {
+                if (message.sender.id == `${number}@c.us`) {
                     await bot.reply(message.chat.id, `\`\`\`[200] - OK 🤖 ✔️ \`\`\``, message.id)
                 }
                 else {
