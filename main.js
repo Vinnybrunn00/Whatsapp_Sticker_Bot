@@ -19,7 +19,7 @@ function start(bot) {
                     await bot.reply(message.chat.id, `\`\`\`[200] - OK 🤖 ✔️ \`\`\``, message.id)
                 }
                 else {
-                    await bot.reply(message.chat.id, `\`\`\`[404] - Proibido ❌ \`\`\``, message.id)
+                    await bot.reply(message.chat.id, `\`\`\`[404] - ❌ \`\`\``, message.id)
                     await setTimeout(() => {
                         bot.sendText(`${number}@c.us`, `*${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ - Tentou usar o _debuger_ sem permissão 🤖`)
                     
