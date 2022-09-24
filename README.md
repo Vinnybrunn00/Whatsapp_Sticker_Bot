@@ -48,7 +48,7 @@ Full API documentation [here](https://github.com/open-wa/wa-automate-nodejs)
 |       ✅        |   Welcome kick                   |
 |       ✅        |   Send flood                     |
 |       ✅        |   Owner bot                      |
-|       ✅        |   Swearing detector              |
+|       ✅        |   Swearing - Delete message      |
 |       ✅        |   Add Member Group	              |
 |       ✅        |   Kick Member Group	            |
 
