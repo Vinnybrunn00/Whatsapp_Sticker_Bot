@@ -138,15 +138,8 @@ function start(bot) {
 
             for (var xingamento in lista) {
                 if (message.body.includes(`${lista[xingamento]}`)){
-                    await bot.reply(message.chat.id, 
-                        `█████████
-█▄█████▄█
-█▼▼▼▼▼▼
-█   ${message.body}
-█▲▲▲▲▲▲
-█████████
-  ██ ██`, message.id
-                    )
+                    await bot.deleteMessage(message.chat.id, message.id)
+                    await bot.sendText(message.chat.id, '✅ - Mensagem imprópria deletada')
                     await setTimeout(() => {
                         bot.sendText(`${number}@c.us`, `\`\`\`[${String(hora).padStart('2', '0')}:${String(minutos).padStart('2', '0')}]\`\`\` - *${message.sender.pushname}* | _${message.sender.id.replace('@c.us', '')}_ > Xingamento no grupo!`)
 
