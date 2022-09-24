@@ -45,12 +45,12 @@ Full API documentation [here](https://github.com/open-wa/wa-automate-nodejs)
 | :-----------: | :--------------------------------: |
 |       ✅        |   Mention all member             |
 |       ✅        |   Welcome to new members         |
-|       ✅        |   welcome kick                   |
+|       ✅        |   Welcome kick                   |
 |       ✅        |   Send flood                     |
 |       ✅        |   Owner bot                      |
-|       ✅        |   Kick Member Group	            |
+|       ✅        |   Swearing detector              |
 |       ✅        |   Add Member Group	              |
-
+|       ✅        |   Kick Member Group	            |
 
 | Debug Mode  |                     Functionality    |
 | :-----------: | :--------------------------------: |
