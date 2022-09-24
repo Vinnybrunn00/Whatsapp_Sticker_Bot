@@ -134,7 +134,7 @@ function start(bot) {
             }
 
             // impropes
-            lista = []
+            lista = [] // list of the words impropes here
 
             for (var xingamento in lista) {
                 if (message.body.includes(`${lista[xingamento]}`)){
