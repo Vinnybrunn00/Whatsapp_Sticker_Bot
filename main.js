@@ -28,38 +28,23 @@ function start(bot) {
             }
             
             // managing participants
-            group = message.chat.groupMetadata.participants
-            for (members in group) {
-                // add participants
-                var add = message.body
-                if (add.substring(0, 4) == '!add') {
-                    adminadd = group[members]['isAdmin']
-                    idd = group[members]['id']
-                    console.log(`${adminadd} > ${idd}`)
-                    if (adminadd == true) {
-                            console.log(`\n${adminadd}`)
-                            bot.addParticipant('GROUP_ID', `55${add.substring(5)}@c.us`)
-                            break
-                    }
-                    else {
-                        await bot.reply(message.chat.id, '❌ ERROR - You are not administrator!', message.id)
-                        break
-                    }
-                }
+            for (membros in participantes) {
+                ident = participantes[membros]['id']
+                adms = participantes[membros]['isAdmin']
 
-                // remove participants
-                var remove = message.bod
-                if (remove.substring(0, 8) == '!remover') {
-                    adminremove = group[members]['isAdmin']
-                    idds = group[members]['id']
-                    if (adminremove == true) {
-                            console.log(adminremove)
-                            bot.removeParticipant('GROUP_ID', `55${remove.substring(9)}@c.us`)
+                if (adms == true) {
+                    if (message.sender.id == ident) {
+                        //removed participants
+                        var add = message.body
+                        if (add.substring(0, 8) == '!remover') { 
+                            bot.removeParticipant(`${message.chat.id}`, `55${add.substring(9)}@c.us`)
                             break
-                    }
-                    else {
-                        await bot.reply(message.chat.id, '❌ ERROR - You are not administrator!', message.id)
-                        break
+                        }
+                        // add participants
+                        if (add.substring(0, 4) == '!add') {
+                            bot.addParticipant(`${message.chat.id}`, `55${add.substring(9)}@c.us`)
+                            break
+                        }
                     }
                 }
             }
